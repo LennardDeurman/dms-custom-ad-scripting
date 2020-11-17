@@ -1,0 +1,31 @@
+<html>
+<head>
+  <script src="//media.admob.com/api/v1/google_mobile_app_ads.js"></script>
+  <script>
+    // Send a color=red event when ad loads.
+    admob.events.dispatchAppEvent("color", "red");
+    
+    handleClick = function() {
+      // Send a color=green event when ad is clicked.
+      admob.events.dispatchAppEvent("color", "green");
+    };
+  </script>
+  <style>
+    #ad {
+      width: 300px;
+      height: 250px;
+      top: 0px;
+      left: 0px;
+      font-size: 24pt;
+      font-weight: bold;
+      position: absolute;
+      background: blue;
+      color: red;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="ad" onClick="handleClick()">Happy Holidays!</div>
+</body>
+</html>

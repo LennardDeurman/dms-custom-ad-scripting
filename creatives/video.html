@@ -1,0 +1,142 @@
+
+
+<html>
+<head>
+    <link href="https://vjs.zencdn.net/7.0.3/video-js.css" rel="stylesheet">
+
+    <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+    <script src="https://unpkg.com/video.js@6.2.1/dist/video.min.js"></script>
+    <script src="https://unpkg.com/videojs-flash@2.0.0/dist/videojs-flash.min.js"></script>
+    <script>
+        videojs.options.flash.swf = 'https://unpkg.com/videojs-swf@5.4.0/dist/video-js.swf';
+    </script>
+    <style>
+
+        .vjs-play-control {
+            display: none !important;
+        }
+
+        .vjs-big-play-button.hovered, .vjs-big-play-button.ended {
+            display: block !important;
+        }
+
+        .vjs-big-play-button.started .vjs-icon-placeholder:before {
+            content: "\f103";
+        }
+
+        .vjs-big-play-button.stopped .vjs-icon-placeholder:before {
+            content: "\f101";
+        }
+
+        .vjs-big-play-button.ended .vjs-icon-placeholder:before {
+            content: "\f116";
+        }
+
+        .vjs-control-bar {
+            display: none !important;
+        }
+
+        .vjs-has-started .vjs-control-bar.hovered {
+            display: flex !important;
+        }
+
+
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+<div id="video">
+
+ <video id="my-video" muted class="video-js video-js vjs-default-skin vjs-big-play-centered" controls preload="auto"
+data-setup='{"fluid": true, "poster": "photo_drinking.jpg"}'>
+        <source  type='video/mp4' src="coca_cola_video.mp4">
+        <source src="http://videos-cdn.mozilla.net/serv/flux/playdoh/playdoh-overview.webm" type='video/webm; codecs="vp8, vorbis"' />
+  
+  </video>
+  
+ 
+
+</div>
+ 
+
+  <script src="https://vjs.zencdn.net/7.0.3/video.js"></script>
+  <script>
+	
+	var player = videojs('my-video');
+	player.ready(function() {
+ 
+	
+	this.on('play', function() {
+	document.querySelector(".vjs-big-play-button").classList.add("started");
+	
+	document.querySelector(".vjs-big-play-button").classList.remove("ended");
+  });
+  
+  this.on('ended', function() {
+	
+	document.querySelector(".vjs-big-play-button").classList.add("ended");
+	document.querySelector(".vjs-big-play-button").classList.remove("started");
+	
+	
+  });
+	
+});
+
+
+
+
+document.getElementById("video").onmouseover = function(){
+    document.querySelector(".vjs-big-play-button").classList.add("hovered");
+
+      document.querySelector(".vjs-control-bar").classList.add("hovered");
+}
+
+document.getElementById("video").onmouseout = function(){
+    document.querySelector(".vjs-big-play-button").classList.remove("hovered");
+    document.querySelector(".vjs-control-bar").classList.remove("hovered");
+}
+
+
+
+document.querySelector(".vjs-big-play-button").onclick = function() {
+	
+	var shouldPause = this.classList.contains("started");
+	var shouldStart = this.classList.contains("stopped");
+	var shouldReplay = this.classList.contains("ended");
+	
+	if (shouldPause) {
+	
+		this.classList.remove("started");
+		this.classList.add("stopped");
+		player.pause();
+		return;
+	}
+	
+	if (shouldStart) {
+		this.classList.remove("stopped");
+		this.classList.add("started");
+		player.play();
+		return;
+	}
+	
+	if (shouldReplay) {
+		player.currentTime(0);
+		player.play();
+		this.classList.remove("ended");
+		this.classList.add("started");
+		return;
+	}
+
+}
+
+
+
+  
+  </script>
+</body>
+</html>

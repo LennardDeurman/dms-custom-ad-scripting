@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="211px" height="91px" viewBox="0 0 211 91" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>logo_small</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="41.5" cy="41.5" r="41.5"></circle>
+        <filter x="-8.4%" y="-6.0%" width="116.9%" height="116.9%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Billboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-376.000000, -82.000000)">
+        <g id="logo_small" transform="translate(380.000000, 84.000000)">
+            <g id="Oval">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#B40808" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+            <text id="D" font-family="Montserrat" font-size="64" font-weight="400" fill="#E3D7D7">
+                <tspan x="19.264" y="64">D</tspan>
+            </text>
+            <text id="M" font-family="Montserrat" font-size="64" font-weight="400" fill="#534F4F">
+                <tspan x="95.42" y="64">M</tspan>
+            </text>
+            <text id="S" font-family="Montserrat" font-size="64" font-weight="400" fill="#534F4F">
+                <tspan x="169.404" y="64">S</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
