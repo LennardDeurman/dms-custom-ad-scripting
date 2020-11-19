@@ -2,6 +2,8 @@
 
 Custom web ad formats package (interscroller, floating banners, video, push-up billboards) while maintaining easy configuration. Solutions can be applied either hard-coded in the page or via AdServer, friendly-iframes. Custom setup can also be made (contact-me!). 
 
+Looking for a similar version for mobile? See: https://github.com/LennardDeurman/dms-mobile-ads/
+
 <div class="container">
 
 <div class="demo-item">
